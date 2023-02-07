@@ -170,7 +170,8 @@ if __name__ == "__main__":
     parser.add_argument("--hosts", type=json.loads, default=os.environ["SM_HOSTS"]) #["algo-1"]
     parser.add_argument("--current-host", type=str, default=os.environ["SM_CURRENT_HOST"]) #"algo-1"
     parser.add_argument("--model-dir", type=str, default=os.environ["SM_MODEL_DIR"]) #"/opt/ml/model"
-    parser.add_argument("--data-dir", type=str, default=os.environ["SM_CHANNEL_TRAINING"]) # /opt/ml/input/data/training
+    #parser.add_argument("--data-dir", type=str, default=os.environ["SM_CHANNEL_TRAINING"]) # /opt/ml/input/data/training
+    parser.add_argument("--data-dir", type=str, default=os.environ["SM_CHANNEL_TR"]) # /opt/ml/input/data/training
     parser.add_argument("--num-gpus", type=int, default=os.environ["SM_NUM_GPUS"]) #1
     _train(parser.parse_args())
 
